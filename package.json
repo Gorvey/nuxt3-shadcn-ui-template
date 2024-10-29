@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
+    "lint-staged": "lint-staged",
     "prepare": "husky"
   },
   "dependencies": {
@@ -42,8 +43,5 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "*": "npx run lint"
   }
 }

@@ -1,22 +1,38 @@
 module.exports = {
   extends: [
-    'stylelint-config-standard-scss',
-    'stylelint-config-standard-vue/scss'
+    'stylelint-config-standard', // 配置stylelint拓展插件
+    'stylelint-config-html/vue' // 配置 vue 中 template 样式格式化
   ],
   plugins: ['stylelint-order'],
   overrides: [
+    // 扫描 .vue/html 文件中的<style>标签内的样式
     {
-      files: ['*.scss', '**/*.scss'], // 指定 .scss 檔
-      rules: {
-        'scss/no-global-function-names': null // 關閉此規則
-      }
+      files: ['**/*.{vue,html}'],
+      customSyntax: 'postcss-html'
     }
   ],
   rules: {
-    // ...
-    'unit-allowed-list': ['em', 'rem', 'deg', 'px'], // 可使用的單位
+    'at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: [
+          'tailwind',
+          'layer',
+          'apply',
+          'variants',
+          'responsive',
+          'screen'
+        ]
+      }
+    ],
+    'selector-pseudo-class-no-unknown': [
+      true,
+      {
+        ignorePseudoClasses: ['global', 'v-deep', 'deep']
+      }
+    ],
+    'unit-allowed-list': ['em', 'rem', 'deg', 'px', '%'], // 可使用的單位
     'order/properties-order': [
-      // 設定排序順序（plugins 必須先定義 stylelint-order）
       'position',
       'top',
       'bottom',

@@ -7,7 +7,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "prepare": "husky"
   },
   "dependencies": {
     "nuxt": "^3.13.2",
@@ -22,6 +25,8 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vue": "^9.30.0",
     "globals": "^15.11.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "postcss": "^8.4.47",
     "postcss-html": "^1.7.0",
     "postcss-scss": "^4.0.9",
@@ -32,5 +37,13 @@
     "stylelint-config-standard-vue": "^1.0.0",
     "stylelint-order": "^6.0.4",
     "typescript-eslint": "^8.12.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": "npx run lint"
   }
 }

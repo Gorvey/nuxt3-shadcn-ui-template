@@ -2,5 +2,12 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.enable": true,
-  "prettier.configPath": ".prettierrc"
+  "prettier.configPath": ".prettierrc",
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "always",
+    "source.fixAll.stylelint": "always"
+  },
+  "stylelint.validate": ["css", "scss", "vue"]
 }

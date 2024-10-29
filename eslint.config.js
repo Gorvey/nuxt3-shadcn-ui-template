@@ -17,7 +17,7 @@ export default [
     }
   },
   {
-    ignores: ['node_modules', 'dist', 'public', '.nuxt']
+    ignores: ['node_modules', 'dist', 'public', '.nuxt', '.output']
   },
   eslintConfigPrettier
 ]

@@ -8,8 +8,23 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt'
   ],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler' // or 'modern'
+        }
+      }
+    }
+  },
   stylelint: {
     lintOnStart: false
+  },
+  eslint: {
+    lintOnStart: false
+  },
+  tailwindcss: {
+    quiet: true
   },
   shadcn: {
     /**

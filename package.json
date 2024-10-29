@@ -11,6 +11,7 @@
     "lint": "eslint . --ext .ts,.vue",
     "lint:fix": "eslint . --ext .ts,.vue",
     "lint-staged": "lint-staged",
+    "commitlint": "commitlint --config commitlint.config.cjs -e -V",
     "prepare": "husky"
   },
   "dependencies": {
@@ -19,6 +20,8 @@
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.13.0",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@nuxtjs/stylelint-module": "^5.2.0",

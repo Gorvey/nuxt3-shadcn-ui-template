@@ -8,8 +8,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix",
+    "lint": "eslint . --ext .ts,.vue",
+    "lint:fix": "eslint . --ext .ts,.vue",
     "lint-staged": "lint-staged",
     "prepare": "husky"
   },
@@ -45,11 +45,6 @@
     }
   },
   "lint-staged": {
-    "*.+(vue|js|jsx|ts|tsx)": [
-      "eslint --fix"
-    ],
-    "*.+(json|css|md)": [
-      "prettier --write"
-    ]
+    "*.{js,ts,vue}": "eslint --fix"
   }
 }

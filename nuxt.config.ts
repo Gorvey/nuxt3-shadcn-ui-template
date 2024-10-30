@@ -5,8 +5,10 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
+    '@vueuse/nuxt',
     '@nuxtjs/tailwindcss',
-    'shadcn-nuxt'
+    'shadcn-nuxt',
+    'nuxt-lodash'
   ],
   vite: {
     css: {
@@ -16,6 +18,13 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  lodash: {
+    prefix: '_',
+    prefixSkip: false,
+    upperAfterPrefix: false,
+    exclude: [],
+    alias: []
   },
   stylelint: {
     lintOnStart: false

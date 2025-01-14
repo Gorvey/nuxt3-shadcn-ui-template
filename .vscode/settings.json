@@ -17,5 +17,8 @@
   // "scss.validate": false,
   "css.customData": [".vscode/tailwind.json"],
   // "scss.lint.unknownAtRules": "ignore",
-  "stylelint.validate": ["css", "scss", "vue"]
+  "stylelint.validate": ["css", "scss", "vue"],
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  }
 }
